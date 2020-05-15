@@ -15,7 +15,7 @@ vector<st> vt;
 int par[10005];
 
 int findP(int n){
-      return (par[n]==n)?n:(findP(par[n]));
+      return par[n]=(par[n]==n)?n:(findP(par[n]));
 }
 
 void mst(int n){

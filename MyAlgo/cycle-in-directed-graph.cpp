@@ -1,5 +1,4 @@
 /// Given a directed graph find out if a cycle exists
-/// Note: Wont work for undirected graph
 /// Returns boolean value 0/1
 /// Starts at parameter node
 vector< int > adj[MX];   // Adjacency list representation of the directed graph

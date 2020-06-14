@@ -7,6 +7,7 @@ int nodeColor[MX];  // Holds state of the current node
 bool cycle(int node){
      nodeColor[node]=1;  // Color=Gray/In process
      for(auto x:adj[node]){
+          //For undirected graph if x==par then continue
           if(nodeColor[x]==0 && cycle(x)) return 1;     // Color=White/Not traversed
           else if(nodeColor[x]==1) return 1;
      }

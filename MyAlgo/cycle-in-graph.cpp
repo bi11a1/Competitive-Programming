@@ -1,6 +1,7 @@
 /// Given a directed graph find out if a cycle exists
 /// Returns boolean value 0/1
 /// Starts at parameter node
+/// For undirected graph to work must check if x is parent node or not
 vector< int > adj[MX];   // Adjacency list representation of the directed graph
 int nodeColor[MX];  // Holds state of the current node
 bool cycle(int node){

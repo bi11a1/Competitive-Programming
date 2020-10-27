@@ -6,7 +6,7 @@ typedef long long ll;
 /*-----------------LIS (length only) Begin------------------*/
 // Parameter => Set infinity larger than max array element
 
-int longestIncreasingSubsequenceLength(vector<int> arr, int inf=1e9){
+int LIS_Length(vector<int> arr, int inf=1e9){
     int i, j, k;
     int sz=arr.size(), ans=0;
     vector<int> length(sz+1, inf);
@@ -38,6 +38,6 @@ int main(){
         scanf("%d", &k);
         vt.push_back(k);
     }
-    printf("%d\n", longestIncreasingSubsequenceLength(vt));
+    printf("%d\n", LIS_Length(vt));
     return 0;
 }

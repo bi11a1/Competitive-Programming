@@ -15,7 +15,7 @@ void sieve(){
 
 ///Returns prime_factors of number X as pairs of <prime, power>
 ///Requires to call sieve()
-///O(NlogN)
+///O(logN)
 vector<pair<int,int>> factorize(int X){
      vector<pair<int,int>> factors;
      while(X>1){

@@ -1,4 +1,5 @@
 ///Calculates primes up to MX
+///smallest_pf[x] indicates smallest prime that divides x
 ///O(NlogN)
 int smallest_pf[MX];
 vector<int> primes;
@@ -15,7 +16,7 @@ void sieve(){
 
 ///Returns prime_factors of number X as pairs of <prime, power>
 ///Requires to call sieve()
-///O(logN)
+///O(NlogN)
 vector<pair<int,int>> factorize(int X){
      vector<pair<int,int>> factors;
      while(X>1){

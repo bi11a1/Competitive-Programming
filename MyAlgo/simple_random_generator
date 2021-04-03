@@ -1,0 +1,24 @@
+#include<iostream>
+#include<random>
+#include<time.h>
+using namespace std;
+
+// srand() sets the seed which is used by rand to generate “random” numbers
+// If srand() is not called, the rand() seed is set as if srand(1) were called at program start.
+// Any other value for seed sets the generator to a different starting point.
+
+// generates random number in range(l, r)
+// Note that it is system dependent, in some cases max random value can be 32767
+// To generate better random use accurate_random_generator
+// Need to set seed as current time
+int custom_rand(int l, int r){
+     return (rand()%(r-l+1))+l;
+}
+
+
+int main(){
+     srand(time(0));
+     for(int i=0; i<1e1; ++i){
+          cout << custom_rand(0, 50) << endl;
+     }
+}

@@ -1,0 +1,14 @@
+#include<iostream>
+#include <random>
+#include <chrono>
+using namespace std;
+
+// Generate random number in range (l, r)
+mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
+int custom_rand(int l, int r){
+     return (rng()%(r-l+1))+l;
+}
+
+int main(){
+     cout << custom_rand(0, 100) << endl;
+}

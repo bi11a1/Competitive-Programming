@@ -10,7 +10,7 @@ void SetSparseTable() {
       if(B[spt[j][i-1]] >= B[spt[j + (1<<(i-1))][i-1]]) {
         spt[j][i] = spt[j][i - 1];
       } else {
-				spt[j][i] = spt[j + (1<<(i-1))][i-1];
+	spt[j][i] = spt[j + (1<<(i-1))][i-1];
       }
     }
   }

@@ -1,16 +1,15 @@
+const int lg=9;
 
 int n;
 int depth[MX], par[MX][lg];
 vector< int > adj[MX];
-
-const int lg=9;
 
 void Dfs(int u, int p){
   for(auto v:adj[u]){
     if(v==p) continue;
     depth[v]=1+depth[u];
     par[v][0]=u;
-    dfs(v, u);
+    Dfs(v, u);
   }
 }
 

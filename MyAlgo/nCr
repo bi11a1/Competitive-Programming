@@ -1,23 +1,23 @@
-ll big_mod(ll n_, ll p_, ll mod_){
-     if(p_==0) return 1LL;
-     if(p_&1LL) return (n_*big_mod(n_, p_-1LL, mod_))%mod_;
-     ll tmp_=big_mod(n_, p_>>1LL, mod_);
-     return (tmp_*tmp_)%mod;
+ll BigMod(ll n_, ll p_, ll mod_){
+  if(p_==0) return 1LL;
+  if(p_&1LL) return (n_*BigMod(n_, p_-1LL, mod_))%mod_;
+  ll tmp_=BigMod(n_, p_>>1LL, mod_);
+  return (tmp_*tmp_)%mod_;
 }
 
-ll inverse_mod(ll n_, ll mod_){ return big_mod(n_, mod_-2, mod_); }
+ll InverseMod(ll n_, ll mod_){ return BigMod(n_, mod_-2, mod_); }
 
-///Calculates nCr%mod
-///pre_calc_fact() function must be called
+///Calculates nCr%mod_
+///PreCalcFact() function must be called
 
 ll fact[MX];
 
-void pre_calc_fact(ll n_, ll mod_){
-     fact[0]=1;
-     for(ll i=1; i<=n_; ++i) fact[i]=(fact[i-1]*i)%mod_;
+void PreCalcFact(ll n_, ll mod_){
+  fact[0]=1;
+  for(ll i=1; i<=n_; ++i) fact[i]=(fact[i-1]*i)%mod_;
 }
 
 ll nCr(ll n_, ll r_, ll mod_){
-     assert(fact[0]);
-     return (fact[n_]*inverse_mod((fact[r_]*fact[n_-r_])%mod_, mod_))%mod_;
+  assert(fact[0]);
+  return (fact[n_]*InverseMod((fact[r_]*fact[n_-r_])%mod_, mod_))%mod_;
 }

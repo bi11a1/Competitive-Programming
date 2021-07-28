@@ -1,3 +1,6 @@
+///TODO: Set value of lg
+///Caution: node starts from 1
+
 const int lg=9;
 
 int n;

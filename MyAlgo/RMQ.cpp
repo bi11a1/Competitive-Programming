@@ -1,7 +1,18 @@
+/// Precalculates the log value, this needs to be called outside test cases
+void PreCalcLog() {
+  int cur = 0, two_pow = 2;
+  for (int i = 1; i < MX; ++i) {
+    if (i == two_pow) {
+      cur++;
+      two_pow *= 2;
+    }
+    pre_log[i] = cur;
+  }
+}
+
 /// Stores the position of the maximum element in array B
 void SetSparseTable() {
   int i, j, k;
-  for (i = 1; i < MX; ++i) pre_log[i] = log2(i);
   for (i = 0; i < n; ++i) {
     spt[i][0] = i;
   }

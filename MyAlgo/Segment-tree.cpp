@@ -11,15 +11,15 @@ void Init(int node, int b, int e) {
   ///TODO: tree[node] = ?
 }
 
-void Update(int node, int b, int e, int s, int f) {
-  if (b > f || e < s) return;
-  if (b >= s && e <= f) {
+void Update(int node, int b, int e, int pos) {
+  if (b > pos || e < pos) return;
+  if (b == e && b == pos) {
     /// Todo: tree[node] = ?
     return;
   }
   int lft = (node<<1), rht = lft+1, mid = ((b+e)>>1);
-  Update(lft, b, mid, s, f);
-  Update(rht, mid+1, e, s, f);
+  Update(lft, b, mid, pos);
+  Update(rht, mid+1, e, pos);
   /// TODO: tree[node] = ?
 }
 

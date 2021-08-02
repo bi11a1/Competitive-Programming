@@ -1,0 +1,30 @@
+void PreCalcLog() {
+  int cur = 0, two_pow = 2;
+  for (int i = 1; i < MX; ++i) {
+    if (i == two_pow) {
+      cur++;
+      two_pow *= 2;
+    }
+    pre_log[i] = cur;
+  }
+}
+
+void SetSparseTable() {
+  ll i, j, k;
+  ll n = dif.size();
+  for (i = 0; i < n; ++i) {
+    spt[i][0] = dif[i];
+  }
+  for (i = 1; i < LG; ++i) {
+    for (j = 0; j+(1<<i)-1 < n; ++j) {
+      spt[j][i] = Gcd(spt[j][i - 1], spt[j + (1<<(i-1))][i-1]);
+    }
+  }
+}
+
+/// Range Maximum Query on range [l, r] in array B
+ll RMQ(ll l, ll r) {
+  ll len = r-l+1;
+  ll k = pre_log[len];
+  return Gcd(spt[l][k], spt[l + len - (1 << k)][k]);
+}

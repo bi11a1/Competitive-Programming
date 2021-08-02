@@ -1,3 +1,4 @@
+// Call precalc only once
 void PreCalcLog() {
   int cur = 0, two_pow = 2;
   for (int i = 1; i < MX; ++i) {

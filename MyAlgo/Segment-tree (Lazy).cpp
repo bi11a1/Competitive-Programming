@@ -42,8 +42,15 @@ int Query(int node, int b, int e, int s, int f) {
   if (b >= s && e <= f) {
     return /// TODO: tree[node] ??
   }
+  
   int lft = (node<<1), rht = lft+1, mid = ((b+e)>>1);
+  
+  Propagate(lft, carry[node]);
+  Propagate(rht, carry[node]);
+  /// TODO: carry[node] = ?
+  
   int q1 = Query(lft, b, mid, s, f);
   int q2 = Query(rht, mid+1, e, s, f);
+  
   return /// TODO: q1 or q2 ??
 }

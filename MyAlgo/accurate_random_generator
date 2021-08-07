@@ -1,8 +1,10 @@
+// Source: https://codeforces.com/blog/entry/61587
+
 #include<iostream>
 #include <random>
 #include <chrono>
 using namespace std;
-
+-----------------------------------------------------------
 /*
 // Generate random number in range (l, r)
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
@@ -10,7 +12,7 @@ int my_rand(int l, int r) {
   return uniform_int_distribution<int>(l, r) (rng);
 }
 */
-
+-----------------------------------------------------------
 /*
 // For random permutation:
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
@@ -19,7 +21,7 @@ int main() {
   shuffle(permutation.begin(), permutation.end(), rng);
 }
 */
-
+-----------------------------------------------------------
 // Generate random number in range (l, r)
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int custom_rand(int l, int r){
@@ -29,4 +31,4 @@ int custom_rand(int l, int r){
 int main(){  
   cout << custom_rand(0, 100) << endl;
 }
-
+-----------------------------------------------------------

@@ -27,8 +27,8 @@ void Sieve(int maximum) {
       if (p > smallest_factor[i] || i * p > maximum) break;
       prime[i * p] = false;
       smallest_factor[i * p] = p;
-      smallest_power[i * p] = smallest_factor[i] == p ? int8_t(smallest_power[i] + 1) : 1;
-      mobius[i * p] = smallest_factor[i] == p ? 0 : int8_t(-mobius[i]);
+      smallest_power[i * p] = smallest_factor[i] == p ? (smallest_power[i] + 1) : 1;
+      mobius[i * p] = smallest_factor[i] == p ? 0 : (-mobius[i]);
     }
   }
 }

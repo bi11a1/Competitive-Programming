@@ -27,7 +27,6 @@ int main() {
     uniform_int_distribution<> dis(min, max);
     int rand_num = dis(gen);
     cout << rand_num << endl;
-  
 }
 */
 -----------------------------------------------------------

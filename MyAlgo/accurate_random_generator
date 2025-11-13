@@ -24,7 +24,7 @@ int main() {
     int seed = 10;
     mt19937 gen(seed);
     int min = 10, max = 20;
-    uniform_int_distribution<> dis(min, max);
+    uniform_int_distribution<> dis(min, max); // inclusive
     int rand_num = dis(gen);
     cout << rand_num << endl;
 }

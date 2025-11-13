@@ -14,6 +14,24 @@ int my_rand(int l, int r) {
 */
 -----------------------------------------------------------
 /*
+// Complete code
+#include <iostream>
+#include <random>
+using namespace std;
+
+// To execute C++, please define "int main()"
+int main() {
+    int seed = 10;
+    mt19937 gen(seed);
+    int min = 10, max = 20;
+    uniform_int_distribution<> dis(min, max);
+    int rand_num = dis(gen);
+    cout << rand_num << endl;
+  
+}
+*/
+-----------------------------------------------------------
+/*
 // For random permutation:
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int main() {

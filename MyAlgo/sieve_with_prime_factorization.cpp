@@ -3,7 +3,21 @@
 ///O(NlogN)
 int smallest_pf[MX];
 vector<int> primes;
-void Sieve(){
+
+void Sieve() { //O(n)
+    for (int i = 2; i < MX; i++) {
+        if (smallest_pf[i] == 0) {
+            smallest_pf[i] = i;
+            primes.push_back(i);
+        }
+        for (int p : primes) {
+            if (p > smallest_pf[i] || i * p >= MX) break;
+            smallest_pf[i * p] = p;
+        }
+    }
+}
+
+void Sieve(){  //O(nlogn) with wrong smallest_pf[]
   int i, j;
   for(i=2; i<MX; ++i){
     if(smallest_pf[i]) continue;

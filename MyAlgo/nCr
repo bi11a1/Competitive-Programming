@@ -5,6 +5,7 @@ ll BigMod(ll n_, ll p_, ll mod_){
   return (tmp_*tmp_)%mod_;
 }
 
+// iff mod_ is prime and gcd(n_, mod_)=1
 ll InverseMod(ll n_, ll mod_){ return BigMod(n_, mod_-2, mod_); }
 
 ///Calculates nCr%mod_
